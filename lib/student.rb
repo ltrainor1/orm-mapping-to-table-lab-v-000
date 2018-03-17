@@ -33,7 +33,7 @@ def save
 end
 
 def self.create(hash)
-  hash[:name]
-  binding.pry
+  new_student = new(hash[:name], hash[:grade])
+  new_student.save
 end
-end 
+end
