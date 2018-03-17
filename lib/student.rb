@@ -36,3 +36,4 @@ def self.create(hash)
   hash[:name]
   binding.pry
 end
+end 
