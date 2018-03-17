@@ -28,7 +28,7 @@ end
 def save
   sql = "INSERT INTO students (name, grade) VALUES(?,?)"
   DB[:conn].execute(sql, self.name, self.grade)
-  self.id = DB[:conn].execute("SELECT id FROM students WHERE name = #{self.name}")
+  self.id = DB[:conn].execute("SELECT MAX(id) FROM students")
 end
 
 end
