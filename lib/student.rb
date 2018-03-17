@@ -20,12 +20,12 @@ def self.create_table
     DB[:conn].execute(sql)
 end
 
-def drop_table(table)
+def self.drop_table(table)
   sql = "DROP TABLE #{table}"
   DB[:conn].execute(sql)
 end
 
-def save(student)
+def self.save(student)
   sql = "INSERT INTO students (name, grade) VALUES(?,?)", student.name, student.grade
   DB[:conn].execute(sql)
 end
