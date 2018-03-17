@@ -23,5 +23,11 @@ end
 def drop_table(table)
   sql = "DROP TABLE #{table}"
   DB[:conn].execute(sql)
+end
+
+def save(student)
+  sql = "INSERT INTO students (name, grade) VALUES(?,?)", student.name, student.grade
+  DB[:conn].execute(sql)
+end
 
 end
