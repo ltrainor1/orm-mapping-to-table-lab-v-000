@@ -1,7 +1,7 @@
 class Student
 
 attr_accessor :name, :grade
-attr_reader :name
+attr_reader :id
 
 def initialize(name, grade, id = nil)
   @name = name
@@ -28,6 +28,7 @@ end
 def save
   sql = "INSERT INTO students (name, grade) VALUES(?,?)"
   DB[:conn].execute(sql, self.name, self.grade)
+  DB[:conn].execute("RETURN id FROM students WHERE name = #{self.name}")
 end
 
 end
