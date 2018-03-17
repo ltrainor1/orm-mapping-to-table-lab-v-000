@@ -31,4 +31,7 @@ def save
   @id = DB[:conn].execute("SELECT MAX(id) FROM students")[0][0]
 end
 
+def self.create(hash)
+  hash[:name]
+  binding.pry
 end
