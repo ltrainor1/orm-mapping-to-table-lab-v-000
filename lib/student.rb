@@ -28,7 +28,7 @@ end
 def save
   sql = "INSERT INTO students (name, grade) VALUES(?,?)"
   DB[:conn].execute(sql, self.name, self.grade)
-  DB[:conn].execute("RETURN id FROM students WHERE name = #{self.name}")
+  self.id = DB[:conn].execute("RETURN id FROM students WHERE name = #{self.name}")
 end
 
 end
